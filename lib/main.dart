@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       
-      title: 'My 1st Flutter App',
+      title: 'My First Flutter App',
 
       theme: ThemeData(
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
