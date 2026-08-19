@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,50 +11,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
+      debugShowCheckedModeBanner: false,
+
       title: 'My First Flutter App',
 
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+        scaffoldBackgroundColor: Colors.white,
       ),
 
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      
-      appBar: AppBar(
-        title: const Text('My First App'),
-      ),
-
-
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            
-            const Text('Hello Flutter!'),
-
-
-            const Text('My First Git Commit'),
-
-
-            ElevatedButton(
-              onPressed: () {
-                print('Button Clicked');
-              },
-              child: const Text('Click Me'),
-            ),
-          ],
-        ),
-      ),
+      home: const HomePage(),
     );
   }
 }
