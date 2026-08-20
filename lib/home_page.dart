@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'contact_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -30,7 +31,9 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  // =====================================================
   // POST 2 - CHANDRESH
+  // =====================================================
 
   int likes2 = 0;
   bool isLiked2 = false;
@@ -39,12 +42,14 @@ class _HomePageState extends State<HomePage> {
 
   void toggleLike2() {
     setState(() {
-        likes2++;
-        isLiked2 = true;
+      likes2++;
+      isLiked2 = true;
     });
   }
 
+  // =====================================================
   // POST 3 - AKASH
+  // =====================================================
 
   int likes3 = 0;
   bool isLiked3 = false;
@@ -53,12 +58,14 @@ class _HomePageState extends State<HomePage> {
 
   void toggleLike3() {
     setState(() {
-        likes3++;
-        isLiked3 = true;
+      likes3++;
+      isLiked3 = true;
     });
   }
 
+  // =====================================================
   // POST 4 - MEET
+  // =====================================================
 
   int likes4 = 0;
   bool isLiked4 = false;
@@ -67,8 +74,8 @@ class _HomePageState extends State<HomePage> {
 
   void toggleLike4() {
     setState(() {
-        likes4++;
-        isLiked4 = true;
+      likes4++;
+      isLiked4 = true;
     });
   }
 
@@ -84,7 +91,6 @@ class _HomePageState extends State<HomePage> {
       builder: (context) {
         return AlertDialog(
           title: const Text('Add a comment'),
-
           content: TextField(
             controller: controller,
             decoration: const InputDecoration(
@@ -92,7 +98,6 @@ class _HomePageState extends State<HomePage> {
               border: OutlineInputBorder(),
             ),
           ),
-
           actions: [
             TextButton(
               onPressed: () {
@@ -100,7 +105,6 @@ class _HomePageState extends State<HomePage> {
               },
               child: const Text('Cancel'),
             ),
-
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
@@ -160,18 +164,36 @@ class _HomePageState extends State<HomePage> {
         ),
 
         actions: [
+          // =================================================
+          // NEW SERVICES PAGE BUTTON
+          // =================================================
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ServicesPage(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.miscellaneous_services_outlined,
+              color: Colors.black,
+            ),
+          ),
+
+          // Existing Favorite Button
           IconButton(
             onPressed: () {},
-
             icon: const Icon(
               Icons.favorite_border,
               color: Colors.black,
             ),
           ),
 
+          // Existing Send Button
           IconButton(
             onPressed: () {},
-
             icon: const Icon(
               Icons.send_outlined,
               color: Colors.black,
@@ -188,10 +210,8 @@ class _HomePageState extends State<HomePage> {
         child: Center(
           child: FractionallySizedBox(
             widthFactor: 0.45,
-
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-
               children: [
 
                 // =====================================================
@@ -200,21 +220,17 @@ class _HomePageState extends State<HomePage> {
 
                 Padding(
                   padding: const EdgeInsets.all(16),
-
                   child: Row(
                     children: [
-
                       Container(
                         width: 50,
                         height: 50,
-
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
                             width: 2,
                           ),
                         ),
-
                         child: const Icon(
                           Icons.person,
                           size: 30,
@@ -225,9 +241,7 @@ class _HomePageState extends State<HomePage> {
 
                       const Expanded(
                         child: Column(
-                          crossAxisAlignment:
-                              CrossAxisAlignment.start,
-
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               'flutter_student',
@@ -236,9 +250,7 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-
                             SizedBox(height: 3),
-
                             Text(
                               'Learning Flutter',
                               style: TextStyle(
@@ -255,11 +267,8 @@ class _HomePageState extends State<HomePage> {
                             isFollowing1 = !isFollowing1;
                           });
                         },
-
                         child: Text(
-                          isFollowing1
-                              ? 'Following'
-                              : 'Follow',
+                          isFollowing1 ? 'Following' : 'Follow',
                         ),
                       ),
                     ],
@@ -270,12 +279,10 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   width: double.infinity,
                   height: 350,
-
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
-
                       colors: [
                         Color(0xFFFFD54F),
                         Color(0xFFFF7043),
@@ -284,21 +291,16 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-
                   child: const Center(
                     child: Column(
-                      mainAxisAlignment:
-                          MainAxisAlignment.center,
-
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
                           Icons.flutter_dash,
                           size: 100,
                           color: Colors.white,
                         ),
-
                         SizedBox(height: 15),
-
                         Text(
                           'Flutter',
                           style: TextStyle(
@@ -307,9 +309,7 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-
                         SizedBox(height: 5),
-
                         Text(
                           'Build beautiful apps',
                           style: TextStyle(
@@ -328,20 +328,15 @@ class _HomePageState extends State<HomePage> {
                     horizontal: 12,
                     vertical: 8,
                   ),
-
                   child: Row(
                     children: [
-
                       IconButton(
                         onPressed: toggleLike1,
-
                         icon: Icon(
                           isLiked1
                               ? Icons.favorite
                               : Icons.favorite_border,
-
                           size: 30,
-
                           color: isLiked1
                               ? Colors.red
                               : Colors.black,
@@ -350,7 +345,6 @@ class _HomePageState extends State<HomePage> {
 
                       IconButton(
                         onPressed: showComment,
-
                         icon: const Icon(
                           Icons.chat_bubble_outline,
                           size: 28,
@@ -361,7 +355,6 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           sharePost('flutter_student');
                         },
-
                         icon: const Icon(
                           Icons.send_outlined,
                           size: 28,
@@ -376,12 +369,10 @@ class _HomePageState extends State<HomePage> {
                             isSaved1 = !isSaved1;
                           });
                         },
-
                         icon: Icon(
                           isSaved1
                               ? Icons.bookmark
                               : Icons.bookmark_border,
-
                           size: 28,
                         ),
                       ),
@@ -393,7 +384,6 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-
                   child: Text(
                     '$likes1 likes',
                     style: const TextStyle(
@@ -409,11 +399,9 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-
                   child: Text(
                     'flutter_student '
                     'Learning Flutter one widget at a time! 🚀',
-
                     style: TextStyle(
                       fontSize: 15,
                     ),
@@ -421,7 +409,6 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 const SizedBox(height: 20),
-
                 const SizedBox(height: 30),
 
                 // =====================================================
@@ -430,21 +417,17 @@ class _HomePageState extends State<HomePage> {
 
                 Padding(
                   padding: const EdgeInsets.all(16),
-
                   child: Row(
                     children: [
-
                       Container(
                         width: 50,
                         height: 50,
-
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
                             width: 2,
                           ),
                         ),
-
                         child: const Icon(
                           Icons.person,
                           size: 30,
@@ -457,7 +440,6 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.start,
-
                           children: [
                             Text(
                               'chandresh',
@@ -466,9 +448,7 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-
                             SizedBox(height: 3),
-
                             Text(
                               'Chandresh',
                               style: TextStyle(
@@ -485,11 +465,8 @@ class _HomePageState extends State<HomePage> {
                             isFollowing2 = !isFollowing2;
                           });
                         },
-
                         child: Text(
-                          isFollowing2
-                              ? 'Following'
-                              : 'Follow',
+                          isFollowing2 ? 'Following' : 'Follow',
                         ),
                       ),
                     ],
@@ -500,7 +477,6 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   width: double.infinity,
                   height: 350,
-
                   child: Image.network(
                     'https://picsum.photos/800/600?random=1',
                     fit: BoxFit.cover,
@@ -513,20 +489,15 @@ class _HomePageState extends State<HomePage> {
                     horizontal: 12,
                     vertical: 8,
                   ),
-
                   child: Row(
                     children: [
-
                       IconButton(
                         onPressed: toggleLike2,
-
                         icon: Icon(
                           isLiked2
                               ? Icons.favorite
                               : Icons.favorite_border,
-
                           size: 30,
-
                           color: isLiked2
                               ? Colors.red
                               : Colors.black,
@@ -535,7 +506,6 @@ class _HomePageState extends State<HomePage> {
 
                       IconButton(
                         onPressed: showComment,
-
                         icon: const Icon(
                           Icons.chat_bubble_outline,
                           size: 28,
@@ -546,7 +516,6 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           sharePost('chandresh');
                         },
-
                         icon: const Icon(
                           Icons.send_outlined,
                           size: 28,
@@ -561,12 +530,10 @@ class _HomePageState extends State<HomePage> {
                             isSaved2 = !isSaved2;
                           });
                         },
-
                         icon: Icon(
                           isSaved2
                               ? Icons.bookmark
                               : Icons.bookmark_border,
-
                           size: 28,
                         ),
                       ),
@@ -578,7 +545,6 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-
                   child: Text(
                     '$likes2 likes',
                     style: const TextStyle(
@@ -594,7 +560,6 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-
                   child: Text(
                     'chandresh '
                     'Having a great day! 📸✨',
@@ -605,7 +570,6 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 const SizedBox(height: 20),
-
                 const SizedBox(height: 30),
 
                 // =====================================================
@@ -614,21 +578,17 @@ class _HomePageState extends State<HomePage> {
 
                 Padding(
                   padding: const EdgeInsets.all(16),
-
                   child: Row(
                     children: [
-
                       Container(
                         width: 50,
                         height: 50,
-
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
                             width: 2,
                           ),
                         ),
-
                         child: const Icon(
                           Icons.person,
                           size: 30,
@@ -641,7 +601,6 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.start,
-
                           children: [
                             Text(
                               'akash',
@@ -650,9 +609,7 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-
                             SizedBox(height: 3),
-
                             Text(
                               'Akash',
                               style: TextStyle(
@@ -669,11 +626,8 @@ class _HomePageState extends State<HomePage> {
                             isFollowing3 = !isFollowing3;
                           });
                         },
-
                         child: Text(
-                          isFollowing3
-                              ? 'Following'
-                              : 'Follow',
+                          isFollowing3 ? 'Following' : 'Follow',
                         ),
                       ),
                     ],
@@ -684,7 +638,6 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   width: double.infinity,
                   height: 350,
-
                   child: Image.network(
                     'https://picsum.photos/800/600?random=2',
                     fit: BoxFit.cover,
@@ -697,20 +650,15 @@ class _HomePageState extends State<HomePage> {
                     horizontal: 12,
                     vertical: 8,
                   ),
-
                   child: Row(
                     children: [
-
                       IconButton(
                         onPressed: toggleLike3,
-
                         icon: Icon(
                           isLiked3
                               ? Icons.favorite
                               : Icons.favorite_border,
-
                           size: 30,
-
                           color: isLiked3
                               ? Colors.red
                               : Colors.black,
@@ -719,7 +667,6 @@ class _HomePageState extends State<HomePage> {
 
                       IconButton(
                         onPressed: showComment,
-
                         icon: const Icon(
                           Icons.chat_bubble_outline,
                           size: 28,
@@ -730,7 +677,6 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           sharePost('akash');
                         },
-
                         icon: const Icon(
                           Icons.send_outlined,
                           size: 28,
@@ -745,12 +691,10 @@ class _HomePageState extends State<HomePage> {
                             isSaved3 = !isSaved3;
                           });
                         },
-
                         icon: Icon(
                           isSaved3
                               ? Icons.bookmark
                               : Icons.bookmark_border,
-
                           size: 28,
                         ),
                       ),
@@ -762,7 +706,6 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-
                   child: Text(
                     '$likes3 likes',
                     style: const TextStyle(
@@ -778,7 +721,6 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-
                   child: Text(
                     'akash '
                     'Beautiful memories 🌄',
@@ -789,8 +731,6 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 const SizedBox(height: 20),
-
-
                 const SizedBox(height: 30),
 
                 // =====================================================
@@ -799,21 +739,17 @@ class _HomePageState extends State<HomePage> {
 
                 Padding(
                   padding: const EdgeInsets.all(16),
-
                   child: Row(
                     children: [
-
                       Container(
                         width: 50,
                         height: 50,
-
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           border: Border.all(
                             width: 2,
                           ),
                         ),
-
                         child: const Icon(
                           Icons.person,
                           size: 30,
@@ -826,7 +762,6 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           crossAxisAlignment:
                               CrossAxisAlignment.start,
-
                           children: [
                             Text(
                               'meet',
@@ -835,9 +770,7 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-
                             SizedBox(height: 3),
-
                             Text(
                               'Meet',
                               style: TextStyle(
@@ -854,11 +787,8 @@ class _HomePageState extends State<HomePage> {
                             isFollowing4 = !isFollowing4;
                           });
                         },
-
                         child: Text(
-                          isFollowing4
-                              ? 'Following'
-                              : 'Follow',
+                          isFollowing4 ? 'Following' : 'Follow',
                         ),
                       ),
                     ],
@@ -869,7 +799,6 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   width: double.infinity,
                   height: 350,
-
                   child: Image.network(
                     'https://picsum.photos/800/600?random=3',
                     fit: BoxFit.cover,
@@ -882,20 +811,15 @@ class _HomePageState extends State<HomePage> {
                     horizontal: 12,
                     vertical: 8,
                   ),
-
                   child: Row(
                     children: [
-
                       IconButton(
                         onPressed: toggleLike4,
-
                         icon: Icon(
                           isLiked4
                               ? Icons.favorite
                               : Icons.favorite_border,
-
                           size: 30,
-
                           color: isLiked4
                               ? Colors.red
                               : Colors.black,
@@ -904,7 +828,6 @@ class _HomePageState extends State<HomePage> {
 
                       IconButton(
                         onPressed: showComment,
-
                         icon: const Icon(
                           Icons.chat_bubble_outline,
                           size: 28,
@@ -915,7 +838,6 @@ class _HomePageState extends State<HomePage> {
                         onPressed: () {
                           sharePost('meet');
                         },
-
                         icon: const Icon(
                           Icons.send_outlined,
                           size: 28,
@@ -930,12 +852,10 @@ class _HomePageState extends State<HomePage> {
                             isSaved4 = !isSaved4;
                           });
                         },
-
                         icon: Icon(
                           isSaved4
                               ? Icons.bookmark
                               : Icons.bookmark_border,
-
                           size: 28,
                         ),
                       ),
@@ -947,7 +867,6 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-
                   child: Text(
                     '$likes4 likes',
                     style: const TextStyle(
@@ -963,7 +882,6 @@ class _HomePageState extends State<HomePage> {
                   padding: EdgeInsets.symmetric(
                     horizontal: 16,
                   ),
-
                   child: Text(
                     'meet '
                     'Enjoying the moment! 😎',
@@ -974,8 +892,6 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 const SizedBox(height: 20),
-
-
                 const SizedBox(height: 30),
               ],
             ),
